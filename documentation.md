@@ -42,9 +42,10 @@ the project locally. This includes:
 This section is the most important and unfortunately the easiest to fall out of
 date.
 
-### Deployment
+### Production Commands
 
-This section documents how your application is deployed.
+This section documents how your application is deployed, restarted and anything
+else required of it in production.
 
 ### References
 
