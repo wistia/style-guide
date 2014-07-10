@@ -794,7 +794,7 @@ you if you forget either of the rules above!
     # uncancel their account, it's likely they're in a rush to do something
     # important. So rather than forcing them to pay _all_ their outstanding
     # orders we are lenient and will let them in if they can successfully pay
-    # one (which demonstrates that their credit card workds). We can queue up
+    # one (which demonstrates that their credit card works). We can queue up
     # the other payments to happen later.
     if account.pay_most_recent_outstanding_order
       account.uncancel
