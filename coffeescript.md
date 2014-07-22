@@ -61,7 +61,7 @@ and spaces.
 <a name="maximum_line_length"/>
 ### Maximum Line Length
 
-Limit all lines to a maximum of 79 characters.
+Limit all lines to a maximum of 80 characters.
 
 <a name="blank_lines"/>
 ### Blank Lines
