@@ -1,14 +1,20 @@
 # CoffeeScript Style Guide
 
-This guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language.
+This guide presents a collection of best-practices and coding conventions for
+the [CoffeeScript][coffeescript] programming language.
 
-This guide is intended to be community-driven, and contributions are highly encouraged.
+This guide is intended to be community-driven, and contributions are highly
+encouraged.
 
-Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
+Please note that this is a work-in-progress: there is much more that can be
+specified, and some of the guidelines that have been specified may not be
+deemed to be idiomatic by the community (in which case, these offending
+guidelines will be modified or removed, as appropriate).
 
 ## Inspiration
 
-The details in this guide have been very heavily inspired by several existing style guides and other resources. In particular:
+The details in this guide have been very heavily inspired by several existing
+style guides and other resources. In particular:
 
 - [PEP-8][pep8]: Style Guide for Python Code
 - Bozhidar Batsov's [Ruby Style Guide][ruby-style-guide]
@@ -49,7 +55,8 @@ The details in this guide have been very heavily inspired by several existing st
 <a name="tabs_or_spaces"/>
 ### Tabs or Spaces?
 
-Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs and spaces.
+Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs
+and spaces.
 
 <a name="maximum_line_length"/>
 ### Maximum Line Length
@@ -63,7 +70,9 @@ Separate top-level function and class definitions with a single blank line.
 
 Separate method definitions inside of a class with a single blank line.
 
-Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).
+Use a single blank line within the bodies of methods or functions in cases
+where this improves readability (e.g., for the purpose of delineating logical
+sections).
 
 <a name="trailing_whitespace"/>
 ### Trailing Whitespace
@@ -73,7 +82,8 @@ Do not include trailing whitespace on any lines.
 <a name="optional_commas"/>
 ### Optional Commas
 
-Avoid the use of commas before newlines when properties or elements of an Object or Array are listed on separate lines.
+Avoid the use of commas before newlines when properties or elements of an
+Object or Array are listed on separate lines.
 
 ```coffeescript
 # Yes
@@ -105,7 +115,8 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
+If using a module system (CommonJS Modules, AMD, etc.), `require` statements
+should be placed on separate lines.
 
 ```coffeescript
 require 'lib/setup'
@@ -170,9 +181,12 @@ Additional recommendations:
 <a name="comments"/>
 ## Comments
 
-If modifying code that is described by an existing comment, update the comment such that it accurately reflects the new code. (Ideally, improve the code to obviate the need for the comment, and delete the comment entirely.)
+If modifying code that is described by an existing comment, update the comment
+such that it accurately reflects the new code. (Ideally, improve the code to
+obviate the need for the comment, and delete the comment entirely.)
 
-The first word of the comment should be capitalized, unless the first word is an identifier that begins with a lower-case letter.
+The first word of the comment should be capitalized, unless the first word is
+an identifier that begins with a lower-case letter.
 
 If a comment is short, the period at the end can be omitted.
 
@@ -181,9 +195,11 @@ If a comment is short, the period at the end can be omitted.
 
 Block comments apply to the block of code that follows them.
 
-Each line of a block comment starts with a `#` and a single space, and should be indented at the same level of the code that it describes.
+Each line of a block comment starts with a `#` and a single space, and should
+be indented at the same level of the code that it describes.
 
-Paragraphs inside of block comments are separated by a line containing a single `#`.
+Paragraphs inside of block comments are separated by a line containing a single
+`#`.
 
 ```coffeescript
   # This is a block comment. Note that if this were a real block
@@ -201,11 +217,15 @@ Paragraphs inside of block comments are separated by a line containing a single 
 <a name="inline_comments"/>
 ### Inline Comments
 
-Inline comments are placed on the line immediately above the statement that they are describing. If the inline comment is sufficiently short, it can be placed on the same line as the statement (separated by a single space from the end of the statement).
+Inline comments are placed on the line immediately above the statement that
+they are describing. If the inline comment is sufficiently short, it can be
+placed on the same line as the statement (separated by a single space from the
+end of the statement).
 
 All inline comments should start with a `#` and a single space.
 
-The use of inline comments should be limited, because their existence is typically a sign of a code smell.
+The use of inline comments should be limited, because their existence is
+typically a sign of a code smell.
 
 Do not use inline comments when they state the obvious:
 
@@ -224,11 +244,16 @@ However, inline comments can be useful in certain scenarios:
 <a name="naming_conventions"/>
 ## Naming Conventions
 
-Use `camelCase` (with a leading lowercase character) to name all variables, methods, and object properties.
+Use `camelCase` (with a leading lowercase character) to name all variables,
+methods, and object properties.
 
-Use `CamelCase` (with a leading uppercase character) to name all classes. _(This style is also commonly referred to as `PascalCase`, `CamelCaps`, or `CapWords`, among [other alternatives][camel-case-variations].)_
+Use `CamelCase` (with a leading uppercase character) to name all classes.
+_(This style is also commonly referred to as `PascalCase`, `CamelCaps`, or
+`CapWords`, among [other alternatives][camel-case-variations].)_
 
-_(The **official** CoffeeScript convention is camelcase, because this simplifies interoperability with JavaScript. For more on this decision, see [here][coffeescript-issue-425].)_
+_(The **official** CoffeeScript convention is camelcase, because this
+simplifies interoperability with JavaScript. For more on this decision, see
+[here][coffeescript-issue-425].)_
 
 For constants, use all uppercase with underscores:
 
@@ -236,7 +261,8 @@ For constants, use all uppercase with underscores:
 CONSTANT_LIKE_THIS
 ```
 
-Methods and variables that are intended to be "private" should begin with a leading underscore:
+Methods and variables that are intended to be "private" should begin with a
+leading underscore:
 
 ```coffeescript
 _privateMethod: ->
@@ -247,7 +273,8 @@ _privateMethod: ->
 
 _(These guidelines also apply to the methods of a class.)_
 
-When declaring a function that takes arguments, always use a single space after the closing parenthesis of the arguments list:
+When declaring a function that takes arguments, always use a single space after
+the closing parenthesis of the arguments list:
 
 ```coffeescript
 foo = (arg1, arg2) -> # Yes
@@ -321,7 +348,9 @@ print inspect value
 new Tag(new Value(a, b), new Arg(c))
 ```
 
-You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
+You will sometimes see parentheses used to group functions (instead of being
+used to group function parameters). Examples of using this style (hereafter
+referred to as the "function grouping style"):
 
 ```coffeescript
 ($ '#selektor').addClass 'klass'
@@ -337,14 +366,17 @@ $('#selektor').addClass 'klass'
 foo(4).bar 8
 ```
 
-In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
+In cases where method calls are being chained, some adopters of this style
+prefer to use function grouping for the initial call only:
 
 ```coffeescript
 ($ '#selektor').addClass('klass').hide() # Initial call only
 (($ '#selektor').addClass 'klass').hide() # All calls
 ```
 
-The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
+The function grouping style is not recommended. However, **if the function
+grouping style is adopted for a particular project, be consistent with its
+usage.**
 
 <a name="strings"/>
 ## Strings
@@ -356,7 +388,8 @@ Use string interpolation instead of string concatenation:
 "this is an " + adjective + " string" # No
 ```
 
-Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unless features like string interpolation are being used for the given string.
+Prefer single quoted strings (`''`) instead of double quoted (`""`) strings,
+unless features like string interpolation are being used for the given string.
 
 For long strings, use the multi-line triple quote syntax with one indentation
 from the variable declaration.
@@ -453,11 +486,14 @@ Do not suppress exceptions.
 <a name="annotations"/>
 ## Annotations
 
-Use annotations when necessary to describe a specific action that must be taken against the indicated block of code.
+Use annotations when necessary to describe a specific action that must be taken
+against the indicated block of code.
 
-Write the annotation on the line immediately above the code that the annotation is describing.
+Write the annotation on the line immediately above the code that the annotation
+is describing.
 
-The annotation keyword should be followed by a colon and a space, and a descriptive note.
+The annotation keyword should be followed by a colon and a space, and a
+descriptive note.
 
 ```coffeescript
   # FIXME: The client's current state should *not* affect payload processing.
@@ -465,7 +501,8 @@ The annotation keyword should be followed by a colon and a space, and a descript
   processPayload()
 ```
 
-If multiple lines are required by the description, indent subsequent lines with two spaces:
+If multiple lines are required by the description, indent subsequent lines with
+two spaces:
 
 ```coffeescript
   # TODO: Ensure that the value returned by this call falls within a certain
@@ -481,7 +518,8 @@ Annotation types:
 - `HACK`: describe the use of a questionable (or ingenious) coding practice
 - `REVIEW`: describe code that should be reviewed to confirm implementation
 
-If a custom annotation is required, the annotation should be documented in the project's README.
+If a custom annotation is required, the annotation should be documented in the
+project's README.
 
 <a name="miscellaneous"/>
 ## Miscellaneous
@@ -522,9 +560,11 @@ return this # Yes
 return @ # No
 ```
 
-Avoid `return` where not required, unless the explicit return increases clarity.
+Avoid `return` where not required, unless the explicit return increases
+clarity.
 
-Use splats (`...`) when working with functions that accept variable numbers of arguments:
+Use splats (`...`) when working with functions that accept variable numbers of
+arguments:
 
 ```coffeescript
 console.log args... # Yes
