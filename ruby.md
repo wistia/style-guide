@@ -179,6 +179,50 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
     end
     ```
 
+* When creating a new block, method, class, or module, there should be no empty
+  lines between the start and end of the blocks.
+
+    ```Ruby
+    # bad
+    module Awesome
+
+
+      class Dog
+
+        # A dog class
+        def walk
+
+          run.slowly
+
+        end
+
+
+        def run
+          ...
+        end
+
+      end
+
+
+    end
+
+
+    # good
+    module Awesome
+      class Dog
+        # A dog class
+        def walk
+          run.slowly
+        end
+
+
+        def run
+          ...
+        end
+      end
+    end
+    ```
+
 * Align the parameters of a method call if they span more than one line. Prefer
   creating new lines and indenting once.
 
