@@ -62,7 +62,7 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
     sum = 1 + 2
     a, b = 1, 2
     1 > 2 ? true : false; puts 'Hi'
-    [1, 2, 3].each {|e| puts e}
+    [1, 2, 3].each{|e| puts e}
     ```
 
     The only exception is when using the exponent operator:
