@@ -336,7 +336,7 @@ getData('dogs.json', (allDogs) ->
 )
 
 # good
-getData 'dogs.json, (allDogs) ->
+getData 'dogs.json', (allDogs) ->
   for dog in allDogs
     console.log(dog) if dog.cool
 ```
