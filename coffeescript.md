@@ -350,7 +350,7 @@ getData 'dogs.json', (allDogs) ->
   console.log(allDogs)
 
 # good
-getData 'dogs.json, (allDogs) -> console.log(allDogs)
+getData 'dogs.json', (allDogs) -> console.log(allDogs)
 ```
 
 When calling functions, choose to omit or include parentheses in such a way
