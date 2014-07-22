@@ -355,7 +355,7 @@ getData 'dogs.json', (allDogs) -> console.log(allDogs)
 
 When calling functions, choose to omit or include parentheses in such a way
 that optimizes for readability. Keeping in mind that "readability" can be
-subjective, the following examples demonstrate cases where parentheses have
+subjective; the following examples demonstrate cases where parentheses have
 been omitted or included in a manner that the community deems to be optimal:
 
 ```coffeescript
