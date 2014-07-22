@@ -261,7 +261,9 @@ bar = -> # Yes
 bar = () -> # No
 ```
 
-In cases where method calls are being chained and the code does not fit on a single line, each call should be placed on a separate line and indented by one level (i.e., two spaces), with a leading `.`.
+In cases where method calls are being chained and the code does not fit on a
+single line, each call should be placed on a separate line and indented by one
+level (i.e., two spaces), with a leading `.`.
 
 ```coffeescript
 [1..3]
@@ -271,12 +273,44 @@ In cases where method calls are being chained and the code does not fit on a sin
   .reduce((x, y) -> x + y)
 ```
 
-When calling functions, choose to omit or include parentheses in such a way that optimizes for readability. Keeping in mind that "readability" can be subjective, the following examples demonstrate cases where parentheses have been omitted or included in a manner that the community deems to be optimal:
+When calling functions that take a callback as the last argument, prefer no
+parentheses for the function call.
+
+```coffeescript
+# bad
+getData('dogs.json', (allDogs) ->
+  for dog in allDogs
+    console.log(dog) if dog.cool
+)
+
+# good
+getData 'dogs.json, (allDogs) ->
+  for dog in allDogs
+    console.log(dog) if dog.cool
+```
+
+However, if the function call easily fits within 80 characters, prefer it on
+one line with parentheses.
+
+```coffeescript
+# bad
+getData 'dogs.json', (allDogs) ->
+  console.log(allDogs)
+
+# good
+getData 'dogs.json, (allDogs) -> console.log(allDogs)
+```
+
+When calling functions, choose to omit or include parentheses in such a way
+that optimizes for readability. Keeping in mind that "readability" can be
+subjective, the following examples demonstrate cases where parentheses have
+been omitted or included in a manner that the community deems to be optimal:
 
 ```coffeescript
 baz 12
 
-brush.ellipse x: 10, y: 20 # Braces can also be omitted or included for readability
+# Braces can also be omitted or included for readability
+brush.ellipse x: 10, y: 20
 
 foo(4).bar(8)
 
