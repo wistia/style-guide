@@ -1096,50 +1096,6 @@ to create instances of a particular class.
     end
     ```
 
-* Prefer [duck-typing](http://en.wikipedia.org/wiki/Duck_typing) over inheritance.
-
-QUESTION: Is this something we actually believe?
-
-    ```Ruby
-    # bad
-    class Animal
-      # abstract method
-      def speak
-      end
-    end
-
-
-    # extend superclass
-    class Duck < Animal
-      def speak
-        puts 'Quack! Quack'
-      end
-    end
-
-
-    # extend superclass
-    class Dog < Animal
-      def speak
-        puts 'Bau! Bau!'
-      end
-    end
-
-
-    # good
-    class Duck
-      def speak
-        puts 'Quack! Quack'
-      end
-    end
-
-
-    class Dog
-      def speak
-        puts 'Bau! Bau!'
-      end
-    end
-    ```
-
 * Avoid the usage of class (`@@`) variables due to their "nasty" behavior
 in inheritance.
 
