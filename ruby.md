@@ -1230,19 +1230,9 @@ in inheritance.
 
 ## Exceptions
 
-* Signal exceptions using the `fail` method. Use `raise` only when
-  catching an exception and re-raising it (because here you're not
-  failing, but explicitly and purposefully raising an exception).
-
-QUESTION: Do we actually believe this?
-
-    ```Ruby
-    begin
-      fail 'Oops';
-    rescue => error
-      raise if error.message != 'Oops'
-    end
-    ```
+* Signal exceptions using the `raise` method--never `fail`--for consistency.
+  Remember that you should only raise errors as a last resort because they are
+  more expensive than using `if`/`else`.
 
 * Never return from an `ensure` block. If you explicitly return from a
   method inside an `ensure` block, the return will take precedence over
