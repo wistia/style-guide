@@ -353,6 +353,21 @@ getData 'dogs.json', (allDogs) ->
 getData 'dogs.json', (allDogs) -> console.log(allDogs)
 ```
 
+Prefer coffeescript's `do` keyword instead of an immediately invoked function
+expection (IIFE).
+
+```coffeescript
+# bad
+(($) ->
+  # stuff with $ as jQuery
+)(jQuery)
+
+# good
+do (jQuery) ->
+  $ = jQuery
+  # stuff with $ as jQuery
+```
+
 When calling functions, choose to omit or include parentheses in such a way
 that optimizes for readability. Keeping in mind that "readability" can be
 subjective; the following examples demonstrate cases where parentheses have
@@ -494,6 +509,29 @@ To iterate over the keys and values of objects:
 ```coffeescript
 object = one: 1, two: 2
 alert("#{key} = #{value}") for key, value of object
+```
+
+When assigning callbacks inside a loop, remember to use the `do` keyword!
+
+```coffeescript
+# bad
+for dog in dogs
+  asyncPet ->
+    # `dog` will always be the last dog in the array
+    if dog is 'retriever'
+      rollOver()
+    else
+      layDown()
+
+# good
+for dog in dogs
+  do (dog) ->
+    asyncPet ->
+      # `dog` will be the dog you expect because of function scoping.
+      if dog is 'retriever'
+        rollOver()
+      else
+        layDown()
 ```
 
 <a name="extending_native_objects"/>
