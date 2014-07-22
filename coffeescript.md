@@ -379,6 +379,9 @@ baz 12
 # Braces can also be omitted or included for readability
 brush.ellipse x: 10, y: 20
 
+# or with parentheses
+brush.ellipse(x: 10, y: 20)
+
 foo(4).bar(8)
 
 obj.value(10, 20) / obj.value(20, 10)
