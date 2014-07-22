@@ -66,13 +66,38 @@ Limit all lines to a maximum of 80 characters.
 <a name="blank_lines"/>
 ### Blank Lines
 
-Separate top-level function and class definitions with a single blank line.
+Separate top-level function and class definitions with two blank lines.
 
-Separate method definitions inside of a class with a single blank line.
+Separate method definitions inside of a class with two blank lines.
 
 Use a single blank line within the bodies of methods or functions in cases
 where this improves readability (e.g., for the purpose of delineating logical
 sections).
+
+When creating a new class or function, there should be no empty
+lines between the definition and the beginning of the code.
+
+    ```coffeescript
+    # bad
+    class Dog
+
+
+      walk: -> run().slowly()
+
+      run: -> ...
+      doSomethingElse: -> ...
+
+
+    # good
+    class Dog
+      walk: -> run().slowly()
+
+
+      run: -> ...
+
+
+      doSomethingElse: -> ...
+    ```
 
 <a name="trailing_whitespace"/>
 ### Trailing Whitespace
