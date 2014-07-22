@@ -167,6 +167,24 @@ CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
 }
 ```
 
+### SASS extend/include
+
+Order mixins alphabetically by `@extend` then `@include`.
+
+```sass
+/* Not recommended */
+.selector
+  background: #f5f5f5
+  @include font(14px, bold)
+  @extend button
+
+/* Recommended */
+.selector
+  @extend button
+  @include font(14px, bold)
+  background: #f5f5f5
+```
+
 ### Selector, declaration, and rule set separation
 
 Separate selectors and declarations by new lines.
