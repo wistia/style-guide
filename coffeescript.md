@@ -358,6 +358,23 @@ Use string interpolation instead of string concatenation:
 
 Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unless features like string interpolation are being used for the given string.
 
+For long strings, use the multi-line triple quote syntax with one indentation
+from the variable declaration.
+
+```coffeescript
+# bad
+mystr = """
+        this is my
+        multi-line string
+        """
+
+# good
+mystr = """
+  this is my
+  multi-line string
+  """
+```
+
 <a name="conditionals"/>
 ## Conditionals
 
