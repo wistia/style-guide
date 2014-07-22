@@ -487,8 +487,8 @@ Multiple comma-separated values for one property should be separated by either
 a space or a newline, including within `rgb()`, `rgba()`, `hsl()` and `hsla()`.
 Newlines should be used for lengthier multi-part values such as those for
 shorthand properties like `box-shadow` and `text-shadow`. Each subsequent value
-after the first should then be on a new line, indented to the same level as the
-selector and then spaced over to left-align with the previous value.
+after the first should then be on a new line, indented once from the property
+name.
 
 ```css
 /* Not recommended */
@@ -501,9 +501,9 @@ selector and then spaced over to left-align with the previous value.
 .example {
   font-family: arial, sans-serif;
   text-shadow: 0 3px 0 #b2a98f,
-               0 14px 10px rgba(0, 0, 0, .15),
-               0 24px 12px rgba(0, 0, 0, .12),
-               0 34px 30px rgba(0, 0, 0, .12);
+    0 14px 10px rgba(0, 0, 0, .15),
+    0 24px 12px rgba(0, 0, 0, .12),
+    0 34px 30px rgba(0, 0, 0, .12);
 }
 ```
 
