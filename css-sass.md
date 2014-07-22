@@ -24,24 +24,39 @@
 
 ## 1. General principles
 
-* Don’t try to prematurely optimize your code; keep it readable and understandable.
-* All code in any code-base should look like a single person typed it, even when many people are contributing to it.
+* Don’t try to prematurely optimize your code; keep it readable and
+  understandable.
+* All code in any code-base should look like a single person typed it, even
+  when many people are contributing to it.
 * Strictly enforce the agreed-upon style.
-* If in doubt when deciding upon a style use existing, common patterns. 
+* If in doubt when deciding upon a style use existing, common patterns.
 
 ### Consistency
 
-**Be consistent.** If you’re editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
+**Be consistent.** If you’re editing code, take a few minutes to look at the
+code around you and determine its style. If they use spaces around all their
+arithmetic operators, you should too. If their comments have little boxes of
+hash marks around them, make your comments have little boxes of hash marks
+around them too.
 
-The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you’re saying rather than on how you’re saying it. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
+The point of having style guidelines is to have a common vocabulary of coding
+so people can concentrate on what you’re saying rather than on how you’re
+saying it. If code you add to a file looks drastically different from the
+existing code around it, it throws readers out of their rhythm when they go to
+read it. Avoid this.
 
 ### Validity
 
-Unless dealing with CSS validator bugs or requiring proprietary syntax, **use valid CSS code**. Use tools such as the [W3C CSS validator](http://jigsaw.w3.org/css-validator/) to test. Using valid CSS is a measurable baseline quality attribute that allows to spot CSS code that may not have any effect and can be removed, and that ensures proper CSS usage.
+Unless dealing with CSS validator bugs or requiring proprietary syntax, **use
+valid CSS code**. Use tools such as the [W3C CSS
+validator](http://jigsaw.w3.org/css-validator/) to test. Using valid CSS is a
+measurable baseline quality attribute that allows to spot CSS code that may not
+have any effect and can be removed, and that ensures proper CSS usage.
 
 ## 2. Basic terminology
 
-Get the basic CSS terminology right. This helps simplifying communication between team members. Take this example:
+Get the basic CSS terminology right. This helps simplifying communication
+between team members. Take this example:
 
 ```css
 h1 {
@@ -59,7 +74,9 @@ h1 {
 
 ## 3. Comments
 
-Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don't leave others in the team guessing as to the purpose of uncommon or non-obvious code.
+Well commented code is extremely important. Take time to describe components,
+how they work, their limitations, and the way they are constructed. Don't leave
+others in the team guessing as to the purpose of uncommon or non-obvious code.
 
 Comment style should be simple and consistent within a single code base.
 
@@ -104,13 +121,19 @@ Example:
 
 * Include a single space before the opening brace of a ruleset.
 * Include a single space after the colon of a declaration.
-* Include a space after each comma in comma-separated property or function values.
-* Include a semi-colon at the end of the last declaration in a declaration block.
-* Place the closing brace of a ruleset in the same column as the first character of the ruleset.
+* Include a space after each comma in comma-separated property or function
+  values.
+* Include a semi-colon at the end of the last declaration in a declaration
+  block.
+* Place the closing brace of a ruleset in the same column as the first
+  character of the ruleset.
 
-### Declaration order 
+### Declaration order
 
-Put declarations in **alphabetical order** in order to achieve consistent code in a way that is easy to remember and maintain. Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
+Put declarations in **alphabetical order** in order to achieve consistent code
+in a way that is easy to remember and maintain. Ignore vendor-specific prefixes
+for sorting purposes. However, multiple vendor-specific prefixes for a certain
+CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
 
 ```css
 /* Not recommended */
@@ -215,7 +238,8 @@ h1 {
 
 ### Indentation and whitespace
 
-Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for indentation.
+Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for
+indentation.
 
 ```css
 /* Not recommended */
@@ -231,7 +255,9 @@ Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for inde
 }
 ```
 
-Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block), that is rule sets within rule sets as well as declarations, so to reflect hierarchy and improve understanding. Also: 
+Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block), that
+is rule sets within rule sets as well as declarations, so to reflect hierarchy
+and improve understanding. Also:
 
 ```css
 /* Not recommended */
@@ -251,7 +277,8 @@ html {
 }
 ```
 
-Remove trailing whitespaces. Trailing whitespaces are unnecessary and can complicate diffs.
+Remove trailing whitespaces. Trailing whitespaces are unnecessary and can
+complicate diffs.
 
 ```css
 /* Not recommended (trailing whitespaces marked as “_”) */
@@ -269,7 +296,8 @@ Remove trailing whitespaces. Trailing whitespaces are unnecessary and can compli
 
 ### Capitalization
 
-**Use only lowercase.** This applies to selectors, properties, and property values.
+**Use only lowercase.** This applies to selectors, properties, and property
+values.
 
 ```css
 /* Not recommended */
@@ -291,7 +319,15 @@ ul,
 
 #### Naming
 
-Use meaningful or generic ID and class names. Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic. Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change. Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers”. Using functional or generic names reduces the probability of unnecessary document or template changes.
+Use meaningful or generic ID and class names. Instead of presentational or
+cryptic names, always use ID and class names that reflect the purpose of the
+element in question, or that are otherwise generic. Names that are specific and
+reflect the purpose of the element should be preferred as these are most
+understandable and the least likely to change. Generic names are simply a
+fallback for elements that have no particular or no meaning different from
+their siblings. They are typically needed as “helpers”. Using functional or
+generic names reduces the probability of unnecessary document or template
+changes.
 
 ```css
 /* Not recommended: meaningless */
@@ -311,7 +347,10 @@ Use meaningful or generic ID and class names. Instead of presentational or crypt
 .alt {}
 ```
 
-Use ID and class names that are as short as possible but as long as necessary. Try to convey what an ID or class is about while being as brief as possible. Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
+Use ID and class names that are as short as possible but as long as necessary.
+Try to convey what an ID or class is about while being as brief as possible.
+Using ID and class names this way contributes to acceptable levels of
+understandability and code efficiency.
 
 ```css
 /* Not recommended */
@@ -325,7 +364,9 @@ Use ID and class names that are as short as possible but as long as necessary. T
 
 #### Delimiters
 
-Separate words in ID and class names by a hyphen. Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
+Separate words in ID and class names by a hyphen. Do not concatenate words and
+abbreviations in selectors by any characters (including none at all) other than
+hyphens, in order to improve understanding and scannability.
 
 ```css
 /* Not recommended: does not separate the words “demo” and “image” */
@@ -341,7 +382,10 @@ Separate words in ID and class names by a hyphen. Do not concatenate words and a
 
 #### Avoid using type selectors
 
-Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is useful for [performance reasons](http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/).
+Unless necessary (for example with helper classes), do not use element names in
+conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is
+useful for [performance
+reasons](http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/).
 
 ```css
 /* Not recommended */
@@ -357,7 +401,11 @@ div.error {}
 
 #### Shorthand notation
 
-CSS offers a variety of [shorthand](http://www.w3.org/TR/CSS21/about.html#shorthand) properties (like `font`) that should be used whenever possible, even in cases where only one value is explicitly set. Using shorthand properties is useful for code efficiency and understandability.
+CSS offers a variety of
+[shorthand](http://www.w3.org/TR/CSS21/about.html#shorthand) properties (like
+`font`) that should be used whenever possible, even in cases where only one
+value is explicitly set. Using shorthand properties is useful for code
+efficiency and understandability.
 
 ```css
 /* Not recommended */
@@ -418,7 +466,8 @@ small {
 
 #### Hexadecimal notation
 
-For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
+For color values that permit it, 3 character hexadecimal notation is shorter
+and more succinct.
 
 ```css
 /* Not recommended */
@@ -434,7 +483,12 @@ p {
 
 #### Multiple comma-separated values
 
-Multiple comma-separated values for one property should be separated by either a space or a newline, including within `rgb()`, `rgba()`, `hsl()` and `hsla()`. Newlines should be used for lengthier multi-part values such as those for shorthand properties like `box-shadow` and `text-shadow`. Each subsequent value after the first should then be on a new line, indented to the same level as the selector and then spaced over to left-align with the previous value.
+Multiple comma-separated values for one property should be separated by either
+a space or a newline, including within `rgb()`, `rgba()`, `hsl()` and `hsla()`.
+Newlines should be used for lengthier multi-part values such as those for
+shorthand properties like `box-shadow` and `text-shadow`. Each subsequent value
+after the first should then be on a new line, indented to the same level as the
+selector and then spaced over to left-align with the previous value.
 
 ```css
 /* Not recommended */
@@ -455,7 +509,9 @@ Multiple comma-separated values for one property should be separated by either a
 
 ### Quotation marks
 
-Use double (`"`) rather than single (`'`) quotation marks for attribute selectors or property values. Also don’t forget to quote attribute values in selectors.
+Use double (`"`) rather than single (`'`) quotation marks for attribute
+selectors or property values. Also don’t forget to quote attribute values in
+selectors.
 
 ```css
 /* Not recommended */
