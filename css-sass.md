@@ -215,6 +215,29 @@ h1 {
 }
 ```
 
+In sass:
+
+```sass
+// Not recommended
+.post
+  background: white
+  opacity: .8
+  &.featured
+    background: yellow
+  &:hover
+    opacity: 1
+
+// Recommended
+.post
+  background: white
+
+  &.featured
+    background: yellow
+
+  &:hover
+    opacity: 1
+```
+
 **Exception:** Don’t add new lines at the end of rule sets within rule sets.
 
 ```css
