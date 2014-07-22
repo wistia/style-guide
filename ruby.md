@@ -88,24 +88,6 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
 
     ```Ruby
     # bad
-    fruits = [
-               :apple,
-               :banana,
-               :orange,
-               :pair
-             ]
-
-    # good
-    fruits = (
-      [
-       :apple,
-       :banana,
-       :orange,
-       :pair
-      ]
-    )
-
-    # bad
     answer = if odd
                1
              else
@@ -120,6 +102,35 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
         2
       end
     )
+    ```
+
+* When defining a long multiline array, keep `[` and `]` on their own lines and
+  indent the content once--one item per line.
+
+    ```Ruby
+    # bad
+    arr = [
+            :apple,
+            :pear,
+            :kiwi,
+            :blueberry
+          ]
+
+    # good
+    arr = [
+      :apple,
+      :pear,
+      :kiwi,
+      :blueberry
+    ]
+    ```
+
+* If the array is short (i.e. it fits easily on one line), then you can do a
+  single-line version.
+
+    ```Ruby
+    # good
+    arr = [:apple, :pear, :kiwi, :blueberry]
     ```
 
 * Indent `when` as deep as `case`. I know that many would disagree
