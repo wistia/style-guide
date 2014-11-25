@@ -547,7 +547,7 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
     end
     ```
 
-* Avoid `self` where not required. (It is only required when calling a self write accessor.)
+* In context of instance objects, avoid `self` where not required. (It is only required when calling a self write accessor.)
 
     ```Ruby
     # bad
@@ -567,6 +567,25 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
         self.status = :in_progress
       end
       status == :verified
+    end
+    ```
+
+* In context of class objects, use `self` even when not required.
+
+    ```Ruby
+    # bad
+    def self.upsert_by_id(id, attrs)
+      transaction do
+        find_by_id(id) || new(attrs)
+      end
+    end
+
+
+    # good
+    def self.upsert_by_id(id, attrs)
+      self.transaction do
+        self.find_by_id(id) || self.new(attrs)
+      end
     end
     ```
 
