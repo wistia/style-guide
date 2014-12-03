@@ -21,6 +21,7 @@ This Ruby style guide recommends best practices so that real-world Ruby programm
 * [Regular Expressions](#regular-expressions)
 * [Percent Literals](#percent-literals)
 * [Metaprogramming](#metaprogramming)
+* [Testing](#testing)
 * [Misc](#misc)
 
 ## Source Code Layout
@@ -1731,6 +1732,23 @@ strings.
 
     # best of all, though, would to define_method as each findable attribute is declared
     ```
+
+## Testing
+
+* Always use rspec for testing Ruby code.
+* Use the `expect()` syntax, not the deprecated `should()` syntax.
+
+### Minimizing our use of rspec's feature set.
+
+Rspec is notorious for introducing new synonyms and syntactical redunancies for
+expressing the same thing in many different ways. It is much easier to rely on
+a small subset of these features and use them consistently than to be constantly
+restructuring code to use the keyword du jour. In this spirit, please abide by
+the following conventions:
+
+* Use `describe` blocks for naming groups of code, rather than `context` blocks.
+* Use `before` and `after` blocks rather than `let` blocks.
+* Use instance variables rather than `subject` blocks to set references.
 
 ## Misc
 
